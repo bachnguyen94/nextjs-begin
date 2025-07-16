@@ -24,7 +24,7 @@ export default function RootLayout({
         <Header />
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem={true}>
             <ThemeSwitcher />
-            <div className='container dark:bg-black'>
+            <div className='container dark:bg-black bg-red-500'>
               {children}
             </div>
           </ThemeProvider>
