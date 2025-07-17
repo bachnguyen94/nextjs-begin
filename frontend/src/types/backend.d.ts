@@ -15,3 +15,11 @@ interface IQueryProduct {
     skip?: string;
     select?: string
 }
+
+interface IProduct {
+    id: string;
+    title: string;
+    description: string,
+    category: string,
+    price: string
+}

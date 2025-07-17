@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { fetchProducts } from "@/infrastructure/apis/product.api";
 
-const useFetchList = (params: string, query: any) => {
-    const [list, setList] = useState([])
+const useFetchList = (path: string, query: any) => {
+    const [list, setList] = useState<IProduct[]>([])
     useEffect (() => {
         const queryString = new URLSearchParams(query).toString();
-        fetchProducts(params, queryString).then((res) => {
-            setList(res.data);
+        fetchProducts(path, queryString).then((res) => {
+            setList(res.data[path]);
         })
     },[JSON.stringify(query)]);
     return [list]

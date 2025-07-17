@@ -14,7 +14,7 @@ function Header() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Link href={"/blog"} className='nav-link'>Blog</Link>
-            <Link href={"/facebook"} className='nav-link'>Facebook</Link>
+            <Link href={"/product"} className='nav-link'>Product</Link>
             <Link href={"/youtube"} className='nav-link'>YouTube</Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

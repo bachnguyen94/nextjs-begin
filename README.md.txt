@@ -10,3 +10,4 @@ npm i react-toastify
 npm i swr
 npm i yup
 npm install react-paginate
+npm install use-debounce
