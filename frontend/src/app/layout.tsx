@@ -1,5 +1,6 @@
 // 
 'use client'
+// import './globals.css'
 import { Inter } from 'next/font/google'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
@@ -24,7 +25,7 @@ export default function RootLayout({
         <Header />
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem={true}>
             <ThemeSwitcher />
-            <div className='container dark:bg-black bg-red-500'>
+            <div className='container'>
               {children}
             </div>
           </ThemeProvider>

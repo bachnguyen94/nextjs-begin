@@ -4,3 +4,14 @@ interface IBlog {
     content: string;
     author: string;
 }
+
+interface IQuery {
+    _page: string;
+    _per_page: string;
+}
+
+interface IQueryProduct {
+    limit?: string;
+    skip?: string;
+    select?: string
+}

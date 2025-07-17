@@ -1,4 +1,4 @@
-import AxiosClient from './general.api';
+import {AxiosClientBlog as AxiosClient} from './general.api';
 
 export const getUsers = () => AxiosClient.get('/users');
 
@@ -13,3 +13,7 @@ export const getBlog = (id: number) =>
 
 export const deleteBlog = (id: number | undefined) =>
   AxiosClient.delete(`/blogs/${id}`);
+
+export const fetchBlogs = (params: string, queryString: string) => {
+  return AxiosClient.get(`/${params}?${queryString}`);
+}

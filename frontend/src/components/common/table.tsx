@@ -44,7 +44,7 @@ function TableComponent(props: Iprops) {
         <thead>
           <tr>
             <th>#</th>
-            <th>Title</th>
+            <th className='dark:bg-black'>Title</th>
             <th>Content</th>
             <th>Author</th>
             <th>Actions</th>

@@ -1,6 +1,5 @@
 'use client'
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
 import TableComponent from '@/components/common/table'
 import CreateModal from '@/components/blog/create.modal'
 import ToastComponent from '@/components/common/toast';

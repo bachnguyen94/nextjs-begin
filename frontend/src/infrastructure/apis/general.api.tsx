@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const AxiosClient = axios.create({
+export const AxiosClientBlog = axios.create({
   baseURL: process.env.NEXT_PUBLIC_BASE_URL,
   timeout: 10000,
   headers: {
@@ -8,4 +8,11 @@ const AxiosClient = axios.create({
   },
 });
 
-export default AxiosClient;
+export const AxiosClientProduct = axios.create({
+  baseURL: "https://dummyjson.com",
+  timeout: 10000,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
