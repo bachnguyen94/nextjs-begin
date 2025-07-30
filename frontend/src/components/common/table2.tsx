@@ -9,13 +9,13 @@ import Link from 'next/link'
 import Pagination from './pagination';
 
 interface Iprops {
-  blogs: IBlog[];
+  blogs: IProduct[];
   setID: React.Dispatch<React.SetStateAction<number>>;
   setShow: React.Dispatch<React.SetStateAction<boolean>>;
   pageChange: (selected: number) => void;
 }
 
-function TableComponent(props: Iprops) {
+function TableComponent2(props: Iprops) {
   const { blogs, setID, setShow, pageChange } = props;
   const handleEdit = (id: number | undefined) => {
     setShow(true);
@@ -47,7 +47,7 @@ function TableComponent(props: Iprops) {
           <tr>
             <th>#</th>
             <th className='dark:bg-black'>Title</th>
-            <th>Content</th>
+            <th>Description</th>
             <th>Author</th>
             <th>Actions</th>
           </tr>
@@ -57,8 +57,8 @@ function TableComponent(props: Iprops) {
             <tr key={blog.id}>
               <td>{blog.id}</td>
               <td>{blog.title}</td>
-              <td style={{ maxWidth: '500px', textOverflow: 'ellipsis' }}>{blog.content}</td>
-              <td>{blog.author}</td>
+              <td style={{ maxWidth: '500px', textOverflow: 'ellipsis' }}>{blog.description}</td>
+              <td>{blog.slug}</td>
               <td style={{ textAlign: 'center' }}>
                 <Link className='btn btn-primary me-2' href={`/blog/view/${blog.id}`}>View</Link>
                 <Button variant="primary" className='me-2' onClick={() => handleEdit(blog.id)}>Edit</Button>
@@ -68,9 +68,9 @@ function TableComponent(props: Iprops) {
           )) }
         </tbody>
       </Table>
-      <Pagination pageCount={6} onPageChange={pageChange} />
+      <Pagination pageCount={11} onPageChange={pageChange} />
     </>
   );
 }
 
-export default TableComponent;
+export default TableComponent2;

@@ -2,6 +2,9 @@
 
 import ReactPaginate from 'react-paginate';
 import '@/styles/pagination.css'; // tuỳ chỉnh CSS
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAnglesRight } from '@fortawesome/free-solid-svg-icons'; // <-- Add this import
+
 
 type Props = {
   pageCount: number;
@@ -13,12 +16,13 @@ export default function Pagination({ pageCount, onPageChange, forcePage }: Props
   return (
     <ReactPaginate
       pageCount={pageCount}
-      pageRangeDisplayed={3}
+      pageRangeDisplayed={1}
+      pageClassName	="page-item"
       marginPagesDisplayed={1}
       onPageChange={(event) => onPageChange(event.selected)}
       forcePage={forcePage}
       previousLabel="←"
-      nextLabel="→"
+      nextLabel={<FontAwesomeIcon icon={faAnglesRight} />}
       containerClassName="pagination"
       activeClassName="active"
     />

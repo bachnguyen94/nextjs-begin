@@ -5,6 +5,13 @@ interface IBlog {
     author: string;
 }
 
+interface IProduct {
+    id?: number;
+    title: string;
+    description: string;
+    slug: string;
+}
+
 interface IQuery {
     _page: string;
     _per_page: string;

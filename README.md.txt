@@ -11,3 +11,6 @@ npm i swr
 npm i yup
 npm install react-paginate
 npm install use-debounce
+npm install @fortawesome/fontawesome-svg-core
+npm install @fortawesome/free-solid-svg-icons
+npm install @fortawesome/react-fontawesome

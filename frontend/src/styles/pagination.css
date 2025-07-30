@@ -1,0 +1,25 @@
+.pagination {
+  display: flex;
+  list-style: none;
+  gap: 8px;
+  justify-content: center;
+  padding: 16px;
+}
+
+.page-item {
+  cursor: pointer;
+  user-select: none;
+}
+
+.page-item:hover {
+  background-color: #f0f0f0;
+}
+
+.active {
+    color: #fff;
+    background-color: #007bff;
+    width: 22px;
+    height: 25px;
+    font-weight: bold;
+    text-align: center;
+}
