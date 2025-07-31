@@ -3,7 +3,7 @@
 import ReactPaginate from 'react-paginate';
 import '@/styles/pagination.css'; // tuỳ chỉnh CSS
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAnglesRight } from '@fortawesome/free-solid-svg-icons'; // <-- Add this import
+import { faAnglesLeft, faAnglesRight } from '@fortawesome/free-solid-svg-icons'; // <-- Add this import
 
 
 type Props = {
@@ -21,7 +21,7 @@ export default function Pagination({ pageCount, onPageChange, forcePage }: Props
       marginPagesDisplayed={1}
       onPageChange={(event) => onPageChange(event.selected)}
       forcePage={forcePage}
-      previousLabel="←"
+      previousLabel={<FontAwesomeIcon icon={faAnglesLeft} />}
       nextLabel={<FontAwesomeIcon icon={faAnglesRight} />}
       containerClassName="pagination"
       activeClassName="active"

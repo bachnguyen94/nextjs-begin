@@ -6,20 +6,27 @@
   padding: 16px;
 }
 
-.page-item {
+.page-item a{
+  display: block;
   cursor: pointer;
   user-select: none;
+  width: 22px;
+  height: 25px;
+  text-align: center;
 }
 
 .page-item:hover {
   background-color: #f0f0f0;
 }
 
-.active {
+.active a{
     color: #fff;
     background-color: #007bff;
     width: 22px;
     height: 25px;
     font-weight: bold;
     text-align: center;
+}
+.active a:hover {
+  background-color: #007bff;
 }

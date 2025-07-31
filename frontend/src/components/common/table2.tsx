@@ -68,7 +68,7 @@ function TableComponent2(props: Iprops) {
           )) }
         </tbody>
       </Table>
-      <Pagination pageCount={11} onPageChange={pageChange} />
+      <Pagination pageCount={12} onPageChange={pageChange} />
     </>
   );
 }
