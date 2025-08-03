@@ -1,15 +1,18 @@
 'use client';
 
-import { useTheme } from 'next-themes';
+import { useContext } from "react";
+// import { useTheme } from 'next-themes';
+import { ThemeContext } from "./themeProvider";
 
 export default function ThemeSwitcher() {
-  const { setTheme } = useTheme();
+  const context = useContext(ThemeContext);
+  if (!context) return null;
+  const { theme, toggleTheme } = context;
+  console.log('Current theme:', theme);
 
   return (
     <div className="space-x-2">
-      <button onClick={() => setTheme('light')}>🌞 Light</button>
-      <button onClick={() => setTheme('dark')}>🌙 Dark</button>
-      <button onClick={() => setTheme('system')}>🖥 System</button>
+      <button onClick={toggleTheme}>🌞 theme</button>
     </div>
   );
 }

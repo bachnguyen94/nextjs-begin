@@ -4,6 +4,6 @@
     bottom: 0; 
     left: 0;
 }
-.dark .bg-dark {
+.dark {
     background-color: #d9e6f2 !important;
 }
