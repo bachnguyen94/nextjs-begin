@@ -4,6 +4,7 @@ import TableComponent2 from '@/components/common/table2';
 import CreateModal from '@/components/blog/create.modal'
 import ToastComponent from '@/components/common/toast';
 import { fetchData, fetchDataProduct } from '@/infrastructure/apis/swr.api'
+import CollapseComponent from '@/components/common/collapse/collapse';
 
 
 
@@ -17,8 +18,8 @@ export default function Blogs() {
     setPage(selected);
   };
 
-// const { data, error, isLoading } = fetchData(`/blogs?_page=` +page +`&_per_page=2`);
-const { data, error, isLoading } = fetchDataProduct(`/products?offset=` + page + `&limit=1`);
+  // const { data, error, isLoading } = fetchData(`/blogs?_page=` +page +`&_per_page=2`);
+  const { data, error, isLoading } = fetchDataProduct(`/products?offset=` + page + `&limit=1`);
 
   if (error) return "An error has occurred.";
   if (isLoading) return "Loading...";
@@ -26,8 +27,9 @@ const { data, error, isLoading } = fetchDataProduct(`/products?offset=` + page +
   return (
     <main>
       <CreateModal id={id} setID={setID} show={show} setShow={setShow}/>
-      <TableComponent2 blogs={data?.sort((a: any, b:any) => b.id - a.id)} setID={setID} setShow={setShow} pageChange={handlePageChange}/>
+      <TableComponent2 products={data?.sort((a: any, b:any) => b.id - a.id)} setID={setID} setShow={setShow} pageChange={handlePageChange}/>
       <ToastComponent />
+      <CollapseComponent />
     </main>
   )
 }

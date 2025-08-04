@@ -9,18 +9,19 @@ import Link from 'next/link'
 import Pagination from './pagination';
 
 interface Iprops {
-  blogs: IProduct[];
+  products: IProduct[];
   setID: React.Dispatch<React.SetStateAction<number>>;
   setShow: React.Dispatch<React.SetStateAction<boolean>>;
   pageChange: (selected: number) => void;
 }
 
 function TableComponent2(props: Iprops) {
-  const { blogs, setID, setShow, pageChange } = props;
+  const { products, setID, setShow, pageChange } = props;
   const handleEdit = (id: number | undefined) => {
     setShow(true);
     id !== undefined ? setID(id) : setID(0);
   }
+  console.log(1111);
   const handleDelete = (id: number| undefined) => {
     Modal.confirm({
       title: 'Bạn chắc chắn muốn xóa?',
@@ -53,16 +54,16 @@ function TableComponent2(props: Iprops) {
           </tr>
         </thead>
         <tbody>
-          { blogs?.map((blog, index) => (
-            <tr key={blog.id}>
-              <td>{blog.id}</td>
-              <td>{blog.title}</td>
-              <td style={{ maxWidth: '500px', textOverflow: 'ellipsis' }}>{blog.description}</td>
-              <td>{blog.slug}</td>
+          { products?.map((product, index) => (
+            <tr key={product.id}>
+              <td>{product.id}</td>
+              <td>{product.title}</td>
+              <td style={{ maxWidth: '500px', textOverflow: 'ellipsis' }}>{product.description}</td>
+              <td>{product.slug}</td>
               <td style={{ textAlign: 'center' }}>
-                <Link className='btn btn-primary me-2' href={`/blog/view/${blog.id}`}>View</Link>
-                <Button variant="primary" className='me-2' onClick={() => handleEdit(blog.id)}>Edit</Button>
-                <Button variant="danger" onClick={() => handleDelete(blog.id)}>Delete</Button>
+                <Link className='btn btn-primary me-2' href={`/blog/view/${product.id}`}>View</Link>
+                <Button variant="primary" className='me-2' onClick={() => handleEdit(product.id)}>Edit</Button>
+                <Button variant="danger" onClick={() => handleDelete(product.id)}>Delete</Button>
               </td>
             </tr>
           )) }

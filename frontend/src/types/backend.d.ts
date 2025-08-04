@@ -6,7 +6,7 @@ interface IBlog {
 }
 
 interface IProduct {
-    id?: number;
+    id: number;
     title: string;
     description: string;
     slug: string;
@@ -29,4 +29,8 @@ interface IProduct {
     description: string,
     category: string,
     price: string
+}
+
+interface IpropsProduct {
+  product: IProduct;
 }

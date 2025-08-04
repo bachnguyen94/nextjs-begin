@@ -12,7 +12,7 @@ export default function ThemeSwitcher() {
 
   return (
     <div className="space-x-2">
-      <button onClick={toggleTheme}>🌞 theme</button>
+      <button onClick={toggleTheme}>🌞 {theme}</button>
     </div>
   );
 }
