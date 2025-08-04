@@ -1,7 +1,10 @@
 'use client';
 import { Collapse } from "antd";
-import PanelComponent from "./panel";
+// import PanelComponent from "./panel";
 import { fetchDataProduct } from '@/infrastructure/apis/swr.api'
+import { Suspense, lazy } from 'react';
+
+const LazyHeavyComponent = lazy(() => import('./panel'));
 
 
 const CollapseComponent = () => {
@@ -13,10 +16,14 @@ const CollapseComponent = () => {
     if (isLoading) return "Loading...";
 
     return (
-        <Collapse defaultActiveKey={['1']} expandIconPosition="end">
+        <Collapse defaultActiveKey={['1']} expandIconPosition="end" accordion>
           {data?.map((product: IProduct) => (
-            <Panel header={<HeaderComponent product={product}/>} key={product.id}>
-              <PanelComponent />
+            /* forceRender={true} thì sẽ tự động lazyload, đang để false để test thử lazy */
+            <Panel header={<HeaderComponent product={product}/>} key={product.id} forceRender={false}>
+              {/* <PanelComponent id={product.id}/> */}
+              <Suspense fallback={<p>Đang tải component...</p>}>
+                <LazyHeavyComponent id={product.id} />
+              </Suspense>
             </Panel>
           ))}
         </Collapse>

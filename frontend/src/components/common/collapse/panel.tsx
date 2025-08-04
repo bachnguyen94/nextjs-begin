@@ -6,12 +6,13 @@ interface IdProps {
 }
 
 const PanelComponent = ({id}: IdProps) => {
-    const { data, error, isLoading } = fetchDataProduct('/products');
+  console.log(id);
+    const { data, error, isLoading } = fetchDataProduct(`/products/${id}`);
       
     if (error) return "An error has occurred.";
     if (isLoading) return "Loading...";
     return (
-        <p>dddd</p>
+        <p>{data.description}</p>
     );
 }
 
